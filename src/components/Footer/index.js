@@ -15,7 +15,7 @@ export const Footer = () => {
     console.log(errors);
 
     return (
-        <footer className="mt-16 rounded-2xl bg-dark flex flex-col items-center text-light mb-10">
+        <footer className="m-10 mt-16 rounded-2xl bg-dark flex flex-col items-center text-light mb-10">
             <h3 className="mt-16 font-mediu text-center capitalize text-4xl px-4">
                 Interesting Stories | Updates | Guides
             </h3>

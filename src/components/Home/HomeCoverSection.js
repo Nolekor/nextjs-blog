@@ -7,7 +7,6 @@ import { Tag } from "../Elements/Tag";
 export const HomeCoverSection = ({ blogs }) => {
     const sortedBlogs = sortBlogs(blogs);
     const blog = sortedBlogs[1];
-    console.log(blog.url_path);
     return (
         <article className="flex flex-col items-start justify-end mx-10 relative h-[85vh] w-full">
             <div className="absolute top-0 left-0 bottom-0 right-0 h-full bg-gradient-to-b from-transparent from-0% to-dark/90 rounded-3xl z-0" />

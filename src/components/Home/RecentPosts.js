@@ -6,7 +6,7 @@ export const RecentPosts = ({ blogs }) => {
     const sortedblogs = sortBlogs(blogs);
 
     return (
-        <section className="w-full mt-32 px-32 flex flex-col items-center justify-center">
+        <section className="w-full mt-32  flex flex-col items-center justify-center">
             <div className="flex w-full justify-between">
                 <h2 className=" inline-block font-bold capitalize text-4xl">
                     Recent Posts
