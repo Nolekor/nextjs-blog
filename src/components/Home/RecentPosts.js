@@ -4,7 +4,6 @@ import { BlogLayoutThree } from "../Blog/BlogLayoutThree";
 
 export const RecentPosts = ({ blogs }) => {
     const sortedblogs = sortBlogs(blogs);
-    console.log();
 
     return (
         <section className="w-full mt-32  flex flex-col items-center justify-center">
