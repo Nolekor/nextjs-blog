@@ -1,6 +1,9 @@
 // contentlayer.config.js
 import { makeSource, defineDocumentType } from "@contentlayer/source-files";
 import readingTime from "reading-time";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypePrettyCode from "rehype-pretty-code";
+import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 var Blog = defineDocumentType(() => ({
   name: "Blog",
@@ -50,14 +53,22 @@ var Blog = defineDocumentType(() => ({
     }
   }
 }));
+var codeOptions = {
+  theme: "github-dark"
+};
 var contentlayer_config_default = makeSource({
   contentDirPath: "content",
   documentTypes: [Blog],
   mdx: {
-    remarkPlugins: [remarkGfm]
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [
+      rehypeSlug,
+      [rehypeAutolinkHeadings, { behavior: "append" }],
+      [rehypePrettyCode, codeOptions]
+    ]
   }
 });
 export {
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-UPQEGTKA.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-LPBEDRC4.mjs.map
