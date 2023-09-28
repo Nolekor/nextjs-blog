@@ -5,6 +5,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
+import GithubSlugger from "github-slugger";
 var Blog = defineDocumentType(() => ({
   name: "Blog",
   filePathPattern: "**/**/*.mdx",
@@ -51,8 +52,35 @@ var Blog = defineDocumentType(() => ({
       type: "json",
       resolve: (doc) => readingTime(doc.body.raw)
     }
+    //errore di compiling------------------------------
+    //     toc: {
+    //         type: "json",
+    //         resolve: async (doc) => {
+    //             const slugger = new GithubSlugger();
+    //             const regularExp = /\n(?<flag>#{1,6})\s+(?<content>.+)/g;
+    //             const headings = array(doc.body.raw.matchAll(regularExp)).map(
+    //                 ({ groups }) => {
+    //                     const flag = groups?.flag;
+    //                     const content = groups?.content;
+    //                     return {
+    //                         level:
+    //                             flag?.length == 1
+    //                                 ? "one"
+    //                                 : flag?.length == 2
+    //                                 ? "two"
+    //                                 : "three",
+    //                         text: content,
+    //                         slug: slugger.slug(content),
+    //                     };
+    //                 }
+    //             );
+    //             return headings;
+    //         },
+    //     },
+    // -----------------
   }
 }));
+console.log(Blog);
 var codeOptions = {
   theme: "github-dark"
 };
@@ -71,4 +99,4 @@ var contentlayer_config_default = makeSource({
 export {
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-LPBEDRC4.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-2KZGS47P.mjs.map
