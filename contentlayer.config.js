@@ -54,35 +54,31 @@ const Blog = defineDocumentType(() => ({
             type: "json",
             resolve: (doc) => readingTime(doc.body.raw),
         },
+        toc: {
+            type: "json",
+            resolve: async (doc) => {
+                const regularExp = /\n(?<flag>#{1,6})\s+(?<content>.+)/g;
+                const slugger = new GithubSlugger();
+                const heading = Array.from(
+                    doc.body.raw.matchAll(regularExp)
+                ).map(({ groups }) => {
+                    const flag = groups?.flag;
+                    const content = groups?.content;
 
-        //errore di compiling------------------------------
-
-        //     toc: {
-        //         type: "json",
-        //         resolve: async (doc) => {
-        //             const slugger = new GithubSlugger();
-        //             const regularExp = /\n(?<flag>#{1,6})\s+(?<content>.+)/g;
-        //             const headings = array(doc.body.raw.matchAll(regularExp)).map(
-        //                 ({ groups }) => {
-        //                     const flag = groups?.flag;
-        //                     const content = groups?.content;
-        //                     return {
-        //                         level:
-        //                             flag?.length == 1
-        //                                 ? "one"
-        //                                 : flag?.length == 2
-        //                                 ? "two"
-        //                                 : "three",
-        //                         text: content,
-        //                         slug: slugger.slug(content),
-        //                     };
-        //                 }
-        //             );
-        //             return headings;
-        //         },
-        //     },
-
-        // -----------------
+                    return {
+                        level:
+                            flag?.length == 1
+                                ? "one"
+                                : flag?.length == 2
+                                ? "two"
+                                : "three",
+                        text: content,
+                        slug: content ? slugger.slug(content) : undefined,
+                    };
+                });
+                return heading;
+            },
+        },
     },
 }));
 console.log(Blog);
