@@ -25,6 +25,7 @@ export const BlogLayoutTwo = ({ blog }) => {
                 <span className="uppercase text-accent font-semibold text-sm">
                     {blog.tags[0]}
                 </span>
+                <br />
                 <Link
                     href={blog.url_path}
                     className="inline-block my-1 font-semibold text-lg"
@@ -35,6 +36,7 @@ export const BlogLayoutTwo = ({ blog }) => {
                         </span>
                     </h2>
                 </Link>
+                <br />
                 <span className="capitalize text-dark/50 font-semibold text-base">
                     {format(new Date(blog.publishedAt), "MMM dd, yyyy")}
                 </span>
