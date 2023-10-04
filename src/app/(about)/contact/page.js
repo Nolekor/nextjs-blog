@@ -1,7 +1,13 @@
 import React from "react";
 import LottieAnimation from "@/src/components/Contact/LottieAnimation";
 import ContactForm from "@/src/components/Contact/ContactForm";
+import siteMetadata from "@/src/utils/siteMetaData";
 
+export const metadata = {
+    metadataBase: new URL(siteMetadata.siteUrl),
+    title: "Contact Me",
+    description: `Contact me throught this form or email me at ${siteMetadata.email}`,
+};
 export default function Contact() {
     return (
         <section className="w-full h-[75vh] border-b-2 border-solid border-dark flex flex-row items-center justify-center text-dark">
