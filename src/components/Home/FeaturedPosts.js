@@ -14,13 +14,13 @@ export const FeaturedPosts = ({ blogs }) => {
 
             <div className="grid grid-cols-2 grid-rows-2 gap-6 mt-16">
                 <article className="col-span-1 row-span-2 relative">
-                    <BlogLayoutOne blog={sortedblogs[2]} />
+                    <BlogLayoutOne blog={sortedblogs[1]} />
+                </article>
+                <article className="col-span-1 row-span-1 relative">
+                    <BlogLayoutTwo blog={sortedblogs[2]} />
                 </article>
                 <article className="col-span-1 row-span-1 relative">
                     <BlogLayoutTwo blog={sortedblogs[3]} />
-                </article>
-                <article className="col-span-1 row-span-1 relative">
-                    <BlogLayoutTwo blog={sortedblogs[4]} />
                 </article>
             </div>
         </section>

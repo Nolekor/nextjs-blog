@@ -19,7 +19,7 @@ export const RecentPosts = ({ blogs }) => {
                 </Link>
             </div>
             <div className="grid grid-cols-3 grid-rows-2 gap-16 mt-16">
-                {sortedblogs.slice(5, 11).map((blog, index) => {
+                {sortedblogs.slice(4, 10).map((blog, index) => {
                     return (
                         <article
                             key={index}
